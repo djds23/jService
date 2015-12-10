@@ -14,7 +14,6 @@ JArchive::Application.routes.draw do
     
   get "index/home", :as => "home"
   get "index/about"
-  resources :game_ids
 
   resources :categories
 

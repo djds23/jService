@@ -35,7 +35,6 @@ if arg1int && arg2int
       var_category = ''
       var_airdate = nil
 
-
       #get an array of the category names, we'll need these later
       categories = game.css('#jeopardy_round .category_name')
       categoryArr = Array.new
@@ -63,11 +62,13 @@ if arg1int && arg2int
 
           var_answer = answermatch.captures[0].to_s
 
+
           #puts var_answer
           var_question = q.css('.clue_text').text()
           index = q.xpath('count(preceding-sibling::*)').to_i
           var_category = categoryArr[index]
           var_value = q.css('.clue_value').text[/[0-9\.]+/]
+
           newClue = Clue.where(
             :question => var_question,
             :answer => var_answer,
