@@ -30,10 +30,14 @@ RSpec.describe ApiController, type: :controller do
     end
 
     it 'only returns clues from the proper category' do
-      get :clues, value: cheap_clue.value, format: :json
+      get :clues, category: cheap_clue.category_id, format: :json
       expect(response).to be_success
-      byebug
-    end
+      body = JSON.parse(response.body)
+      expect(body.count).to eq(1)
+
+      clue = body.first
+      expect(clue["id"]).to eq(cheap_clue.id)
+     end
   end
 
   describe '#random' do
