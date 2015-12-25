@@ -37,13 +37,16 @@ RSpec.describe ApiController, type: :controller do
 
       clue = body.first
       expect(clue["id"]).to eq(cheap_clue.id)
-     end
+    end
+
+    it 'follows the correct offset'
   end
 
   describe '#random' do
   end
 
   describe '#categories' do
+    it 'follows the correct offset'
   end
 
   describe '#single_category' do
