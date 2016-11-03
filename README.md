@@ -12,6 +12,17 @@ View a working demo at http://jservice.io
 * visit `http://localhost:3000/clues` or view `config\routes.rb` file for more
 * shoot me a pull request to the readme with your app in the wild!
 
+###Deployment to Ubuntu
+* install RVM `gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+\curl -sSL https://get.rvm.io | bash -s stable --rails`
+* clone this repo
+* `apt-get install postgresql`
+* `apt-get install postgresql-contrib`
+* `gem install pg -v '0.12.2' -- --with-pg-config=/usr/bin/pg_config`j
+* `bundle`
+* create steveo superuser in postgresql
+* `rake db:create && rake db:migrate`
+
 ###jService in the wild
 * [jService Twitter Bot](http://twitter.com/jservicebot)
 * [TrebekBot for Slack](https://github.com/gesteves/trebekbot)
