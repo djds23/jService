@@ -16,11 +16,13 @@ View a working demo at http://jservice.io
 * install RVM `gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 \curl -sSL https://get.rvm.io | bash -s stable --rails`
 * clone this repo
+* `apt-get install libpq-dev`
 * `apt-get install postgresql`
 * `apt-get install postgresql-contrib`
 * `gem install pg -v '0.12.2' -- --with-pg-config=/usr/bin/pg_config`j
 * `bundle`
 * create steveo superuser in postgresql
+* [ensure auth is set to md5](http://stackoverflow.com/questions/18664074/getting-error-peer-authentication-failed-for-user-postgres-when-trying-to-ge)
 * `rake db:create && rake db:migrate`
 
 ###jService in the wild
