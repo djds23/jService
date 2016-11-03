@@ -5,7 +5,7 @@ class ApiController < ApplicationController
       count = 1000
     end
 
-    @result = Clue.valid.order('RANDOM()').uniq.limit(count)
+    @result = Clue.valid.order('RANDOM()').includes(:category).limit(count)
     respond_to do |format|
       format.json { render :json => @result.to_json(:include => :category) }
     end
@@ -62,3 +62,4 @@ class ApiController < ApplicationController
     end
   end
 end
+
