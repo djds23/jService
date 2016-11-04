@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707042456) do
+ActiveRecord::Schema.define(version: 20161104225323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150707042456) do
     t.integer  "category_id"
     t.integer  "game_id"
     t.integer  "invalid_count"
+    t.datetime "deactivated_at"
   end
 
   create_table "indices", force: true do |t|
