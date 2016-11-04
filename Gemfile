@@ -42,8 +42,8 @@ end
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+# Use Puma as the app server
+gem 'puma', '~> 3.6.0'
 
 # Deploy with Capistrano
 # gem 'capistrano'
